@@ -1,0 +1,333 @@
+
+/* GENERAL SETTINGS */
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+@font-face {
+    font-family: myfont;
+    src: url(../fonts/MyriadPro-Light.otf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: myfont;
+}
+
+
+
+
+
+
+
+
+
+$sidebarWidth: 300px;
+$infoWidth: 200px;
+$transition : all .5s;
+$paddingRight : 15px;
+$fontSize: 19px;
+
+
+
+/* COLOR VARIABLES */
+$sidebarBackgroundColor: #242b2e;
+$whiteColor: #fff;
+$borderColor : #293034;
+$hoverColor: #21acab;
+$bottomMenuColor: #666b6d;
+$buttonColor: #28b4b2;
+$filterColor: #1ab5b3;
+$buttonSize: 50px;
+
+
+
+
+
+
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    
+    #sidebar {
+            max-width: $sidebarWidth;
+            min-width: $sidebarWidth;
+            background: $sidebarBackgroundColor;
+            color: $whiteColor;
+            transition: $transition;
+            -webkit-box-shadow: 11px 1px 20px 1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 11px 1px 20px 1px rgba(0,0,0,0.75);
+            box-shadow: 11px 1px 20px 1px rgba(0,0,0,0.75);
+            z-index: 9;
+            
+
+         .navbar {
+          padding: 0;
+        
+
+            .navbar-brand {
+                width: 100%;
+                height: 125px;
+                margin: 0;
+                padding: 0;
+                background-color: $whiteColor;
+                text-align: center;
+                padding-top: 30px;
+            }
+
+            .main-menu {
+                width: 100%;
+                text-align: right;
+                
+                .nav-item {
+                    border-bottom: 1px solid $borderColor;
+                
+                    .nav-link {
+                    font-weight: 100;
+                    color: $whiteColor;
+                    font-size: 18px;
+                     
+                         &:hover  {
+                        background-color: $hoverColor;
+                        transition: $transition;
+
+                    }
+                }
+             }
+
+         }
+
+         .filter-heading {
+             width: 100%;
+             text-align: right;
+             padding-right: $paddingRight;
+             padding-bottom: 5px;
+
+             span {
+                 color: $filterColor;
+                 font-size: $fontSize;
+                 font-weight: 300;
+                 padding-right: 5px;
+                 line-height: $fontSize;
+                 vertical-align: bottom;
+
+             }
+         }
+        
+         .bottom-menu {
+             width: 100%;
+             text-align: right;
+
+             .nav-item {
+                padding: 0;
+
+                a {
+                    color: $bottomMenuColor;
+                    font-size: 13px;
+                    padding-right: $paddingRight;
+                    padding-top: 0;
+                    padding-bottom: 0px;
+                    font-weight: 300;
+                   
+                        &:hover  {
+                          color: $whiteColor;
+                          transition: $transition;
+                    }
+                }
+             }
+         }
+
+        .social-icons {
+             width: 100%;
+                
+                ul {
+                list-style: none;
+                padding-right: $paddingRight;
+                padding-top: 20px;
+                border-top: 1px solid $borderColor;
+
+                    .social-icon {
+                        float: right;
+                        margin-left: 8px;
+                    }
+                }
+        }
+
+        .copyright {
+            width: 100%;
+            padding-top: 20px;
+            padding-right: $paddingRight;
+            text-align: right;
+            color: $bottomMenuColor;
+        }
+    }
+}
+
+#content {
+    width: 100%;
+
+    .container-fluid {
+        padding: 0;
+
+        .btn-info {
+            width: $buttonSize;
+            height: $buttonSize;
+            border-radius: 5px;
+            background-color: $buttonColor;
+            position: fixed;
+            z-index: 10;
+            opacity: .8;
+            color: $whiteColor;
+            
+            }
+
+        #infoSection {
+            max-width: 200px;
+            min-width: 200px;
+            right: -200px;
+            top: 50px;
+            border-radius: 5px;
+            background-color: rgba(0,0,0, .9);
+            position: fixed;
+            z-index: 10;
+            opacity: .8;
+            color: $whiteColor;
+            transition: $transition;
+
+            .info-text {
+                margin-bottom: 5px;
+            }
+           
+            .fas {
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            
+
+        }
+
+        .active {
+                right: 0 !important;
+        }
+
+      
+
+        
+        #infoCollapse {
+            width: $buttonSize;
+            height: $buttonSize;
+            border-radius: 5px;
+            position: fixed;
+            background-color: $buttonColor;
+            right: 0;
+            top: 0;
+            z-index: 10;
+            opacity: .8;
+            color: $whiteColor;
+            img {
+                
+                padding-right: 10px;
+            }
+      }
+
+        
+
+      
+
+        
+        }
+
+        
+
+        
+
+        .overlay-container {
+
+            .image {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+            
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                cursor: pointer;
+                transition: all .3s; 
+
+                .text {
+                    color: $whiteColor;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    width: 100%;
+                    height: auto;
+
+                    .project-title {
+                        font-size: 24px;
+                    }
+
+                    .imgProject {
+                    
+                        background: $hoverColor;
+                        color: $whiteColor;
+                    }
+
+                    .overlay-border {
+                        width: 50%;
+                        border: 1px solid $whiteColor;
+                        margin: 0 auto;
+                        margin-bottom: 15px;
+                        opacity: .7;
+                    }
+                    
+                }
+
+
+                &:hover {
+                opacity: .8;
+                background-color: $hoverColor;
+            }
+        }
+        }
+        }
+        }
+       
+        
+        
+    
+
+
+
+.active {
+      margin-left: -$sidebarWidth;
+    }
+
+      
+
+
+
+
